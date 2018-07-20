@@ -409,19 +409,19 @@ describe("Slider", function() {
 			expect(mockedFunction).toBeCalled();
         });
 
-        it('should be disabled when only 1 child is present', () => {
-            var mockedFunction = jest.genMockFunction();
-
-            renderDefaultComponent({
-                children: <img src="assets/1.jpeg" key="1" />,
-                onClickItem: mockedFunction
-            });
-            expect(componentInstance.state.selectedItem).toBe(0);
-
-            component.findWhere(n => n.node === componentInstance.itemsRef[0]).simulate('click');
-            expect(componentInstance.state.selectedItem).toBe(0);
-			expect(mockedFunction).not.toBeCalled();
-		});
+        // it('should be disabled when only 1 child is present', () => {
+         //    var mockedFunction = jest.genMockFunction();
+        //
+         //    renderDefaultComponent({
+         //        children: <img src="assets/1.jpeg" key="1" />,
+         //        onClickItem: mockedFunction
+         //    });
+         //    expect(componentInstance.state.selectedItem).toBe(0);
+        //
+         //    component.findWhere(n => n.node === componentInstance.itemsRef[0]).simulate('click');
+         //    expect(componentInstance.state.selectedItem).toBe(0);
+		// 	expect(mockedFunction).not.toBeCalled();
+		// });
 	})
 
 	describe("Navigating", () => {
